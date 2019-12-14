@@ -6,11 +6,6 @@ tags: [dataviz, hvplot, seaborn, matplotlib, randomForest]
 excerpt: "This is the introduction of the prediction model."
 hv-loader:
   hv-chart-1: "charts/importance.html"
-div {
-  height: 400px;
-  width: 400px;
-  background-color: powderblue;
-}
 toc: true
 toc_sticky: true
 ---

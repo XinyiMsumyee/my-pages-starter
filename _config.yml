@@ -16,7 +16,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale: "en-US"
-title: "MUSA 620: Data Wrangling and Data Visualization"
+title: "Final Project for MUSA620"
 title_separator: "-"
 name: "TAnalysXi"
 description: "An user-friendly analysis system for taxi."

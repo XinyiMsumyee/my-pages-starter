@@ -1,0 +1,271 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>hvPlot Plot</title>
+      
+      
+        
+          
+        <style>
+            table.panel-df {
+                    margin-left: auto;
+                    margin-right: auto;
+                    border: none;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    color: black;
+                    font-size: 12px;
+                    table-layout: fixed;
+                }
+
+                .panel-df tr, th, td {
+                    text-align: right;
+                    vertical-align: middle;
+                    padding: 0.5em 0.5em !important;
+                    line-height: normal;
+                    white-space: normal;
+                    max-width: none;
+                    border: none;
+                }
+
+                .panel-df tbody {
+                    display: table-row-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                }
+
+                .panel-df tbody tr:nth-child(odd) {
+                    background: #f5f5f5;
+                }
+
+                .panel-df thead {
+                    border-bottom: 1px solid black;
+                    vertical-align: bottom;
+                }
+
+                .panel-df tr:hover {
+                    background: lightblue !important;
+                    cursor: pointer;
+                }
+
+        </style>
+        <style>
+            .widget-box {
+                	min-height: 20px;
+                	background-color: #f5f5f5;
+                	border: 1px solid #e3e3e3 !important;
+                	border-radius: 4px;
+                	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+                	overflow-x: hidden;
+                	overflow-y: hidden;
+                }
+
+                .scrollable {
+                  overflow: scroll;
+                }
+
+                progress {
+                	appearance: none;
+                	-moz-appearance: none;
+                	-webkit-appearance: none;
+
+                	border: none;
+                	height: 20px;
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                	color: royalblue;
+                	position: relative;
+                	margin: 0 0 1.5em;
+                }
+
+                progress[value]::-webkit-progress-bar {
+                	background-color: whiteSmoke;
+                	border-radius: 3px;
+                	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+                }
+
+                progress[value]::-webkit-progress-value {
+                	position: relative;
+
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress.active:not([value])::before {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress[value]::-moz-progress-bar {
+                	background-size: 35px 20px, 100% 100%, 100% 100%;
+                	border-radius:3px;
+                }
+
+                progress:not([value])::-moz-progress-bar {
+                	border-radius:3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+
+                }
+
+                progress.active:not([value])::-moz-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.active:not([value])::-webkit-progress-bar {
+                	background-position: 10%;
+                	animation-name: stripes;
+                	animation-duration: 3s;
+                	animation-timing-function: linear;
+                	animation-iteration-count: infinite;
+                }
+
+                progress.primary[value]::-webkit-progress-value { background-color: #007bff; }
+                progress.primary:not([value])::before { background-color: #007bff; }
+                progress.primary:not([value])::-webkit-progress-bar { background-color: #007bff; }
+                progress.primary::-moz-progress-bar { background-color: #007bff; }
+
+                progress.secondary[value]::-webkit-progress-value { background-color: #6c757d; }
+                progress.secondary:not([value])::before { background-color: #6c757d; }
+                progress.secondary:not([value])::-webkit-progress-bar { background-color: #6c757d; }
+                progress.secondary::-moz-progress-bar { background-color: #6c757d; }
+
+                progress.success[value]::-webkit-progress-value { background-color: #28a745; }
+                progress.success:not([value])::before { background-color: #28a745; }
+                progress.success:not([value])::-webkit-progress-bar { background-color: #28a745; }
+                progress.success::-moz-progress-bar { background-color: #28a745; }
+
+                progress.danger[value]::-webkit-progress-value { background-color: #dc3545; }
+                progress.danger:not([value])::before { background-color: #dc3545; }
+                progress.danger:not([value])::-webkit-progress-bar { background-color: #dc3545; }
+                progress.danger::-moz-progress-bar { background-color: #dc3545; }
+
+                progress.warning[value]::-webkit-progress-value { background-color: #ffc107; }
+                progress.warning:not([value])::before { background-color: #ffc107; }
+                progress.warning:not([value])::-webkit-progress-bar { background-color: #ffc107; }
+                progress.warning::-moz-progress-bar { background-color: #ffc107; }
+
+                progress.info[value]::-webkit-progress-value { background-color: #17a2b8; }
+                progress.info:not([value])::before { background-color: #17a2b8; }
+                progress.info:not([value])::-webkit-progress-bar { background-color: #17a2b8; }
+                progress.info::-moz-progress-bar { background-color: #17a2b8; }
+
+                progress.light[value]::-webkit-progress-value { background-color: #f8f9fa; }
+                progress.light:not([value])::before { background-color: #f8f9fa; }
+                progress.light:not([value])::-webkit-progress-bar { background-color: #f8f9fa; }
+                progress.light::-moz-progress-bar { background-color: #f8f9fa; }
+
+                progress.dark[value]::-webkit-progress-value { background-color: #343a40; }
+                progress.dark:not([value])::-webkit-progress-bar { background-color: #343a40; }
+                progress.dark:not([value])::before { background-color: #343a40; }
+                progress.dark::-moz-progress-bar { background-color: #343a40; }
+
+                progress:not([value])::-webkit-progress-bar {
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+                progress:not([value])::before {
+                	content:" ";
+                	position:absolute;
+                	height: 20px;
+                	top:0;
+                	left:0;
+                	right:0;
+                	bottom:0;
+                	border-radius: 3px;
+                	background:
+                	linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.2) 33%, rgba(0, 0, 0, 0.2) 66%, transparent 66%) left/2.5em 1.5em;
+                }
+
+                @keyframes stripes {
+                  from {background-position: 0%}
+                  to {background-position: 100%}
+                }
+        </style>
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="c22caf80-a582-416e-9751-e0f882478f45" data-root-id="1115"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1253">
+          {"c5f0e380-dde4-49f9-9ebf-745c374440cc":{"roots":{"references":[{"attributes":{},"id":"1120","type":"LinearScale"},{"attributes":{},"id":"1155","type":"CategoricalTickFormatter"},{"attributes":{"axis_label":"Importance","bounds":"auto","formatter":{"id":"1154","type":"BasicTickFormatter"},"major_label_orientation":"horizontal","ticker":{"id":"1125","type":"BasicTicker"}},"id":"1124","type":"LinearAxis"},{"attributes":{},"id":"1134","type":"PanTool"},{"attributes":{},"id":"1125","type":"BasicTicker"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b3"},"height":{"value":0.8},"line_alpha":{"value":0.1},"line_color":{"value":"black"},"right":{"field":"Importance"},"y":{"field":"Feature"}},"id":"1149","type":"HBar"},{"attributes":{"source":{"id":"1145","type":"ColumnDataSource"}},"id":"1152","type":"CDSView"},{"attributes":{"data_source":{"id":"1145","type":"ColumnDataSource"},"glyph":{"id":"1148","type":"HBar"},"hover_glyph":null,"muted_glyph":{"id":"1150","type":"HBar"},"nonselection_glyph":{"id":"1149","type":"HBar"},"selection_glyph":null,"view":{"id":"1152","type":"CDSView"}},"id":"1151","type":"GlyphRenderer"},{"attributes":{"align":null,"below":[{"id":"1124","type":"LinearAxis"}],"center":[{"id":"1128","type":"Grid"},{"id":"1132","type":"Grid"}],"left":[{"id":"1129","type":"CategoricalAxis"}],"margin":null,"min_border_bottom":10,"min_border_left":10,"min_border_right":10,"min_border_top":10,"plot_height":500,"plot_width":700,"renderers":[{"id":"1151","type":"GlyphRenderer"}],"sizing_mode":"fixed","title":{"id":"1116","type":"Title"},"toolbar":{"id":"1138","type":"Toolbar"},"x_range":{"id":"1112","type":"Range1d"},"x_scale":{"id":"1120","type":"LinearScale"},"y_range":{"id":"1113","type":"FactorRange"},"y_scale":{"id":"1122","type":"CategoricalScale"}},"id":"1115","subtype":"Figure","type":"Plot"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1162","type":"BoxAnnotation"},{"attributes":{"callback":null,"end":0.5009029861989955,"reset_end":0.5009029861989955,"reset_start":0.0,"tags":[[["Importance","Importance",null]]]},"id":"1112","type":"Range1d"},{"attributes":{"callback":null,"factors":["precipornot","weekdayornot","Temperature","subway_count","restaurant_count","percent_work_by_taxi","Med_Inc","shop_count"],"tags":[[["Feature","Feature",null]]]},"id":"1113","type":"FactorRange"},{"attributes":{},"id":"1163","type":"UnionRenderers"},{"attributes":{"overlay":{"id":"1162","type":"BoxAnnotation"}},"id":"1136","type":"BoxZoomTool"},{"attributes":{},"id":"1154","type":"BasicTickFormatter"},{"attributes":{"text":"","text_color":{"value":"black"},"text_font_size":{"value":"12pt"}},"id":"1116","type":"Title"},{"attributes":{},"id":"1135","type":"WheelZoomTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1114","type":"HoverTool"},{"id":"1133","type":"SaveTool"},{"id":"1134","type":"PanTool"},{"id":"1135","type":"WheelZoomTool"},{"id":"1136","type":"BoxZoomTool"},{"id":"1137","type":"ResetTool"}]},"id":"1138","type":"Toolbar"},{"attributes":{"fill_color":{"value":"#1f77b3"},"height":{"value":0.8},"right":{"field":"Importance"},"y":{"field":"Feature"}},"id":"1148","type":"HBar"},{"attributes":{},"id":"1122","type":"CategoricalScale"},{"attributes":{},"id":"1146","type":"Selection"},{"attributes":{"grid_line_color":null,"ticker":{"id":"1125","type":"BasicTicker"}},"id":"1128","type":"Grid"},{"attributes":{},"id":"1133","type":"SaveTool"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"#1f77b3"},"height":{"value":0.8},"line_alpha":{"value":0.2},"line_color":{"value":"black"},"right":{"field":"Importance"},"y":{"field":"Feature"}},"id":"1150","type":"HBar"},{"attributes":{"dimension":1,"grid_line_color":null,"ticker":{"id":"1130","type":"CategoricalTicker"}},"id":"1132","type":"Grid"},{"attributes":{"callback":null,"data":{"Feature":["shop_count","Med_Inc","percent_work_by_taxi","restaurant_count","subway_count","Temperature","weekdayornot","precipornot"],"Importance":{"__ndarray__":"ijAGs2UH4D+JX2iGBsfMPxii9Xtpa8k/qj3HmnQLoz/Tf6D2OyGiP+N7Bb73lV0/R8dfy9gWUD/mpwQ52OYyPw==","dtype":"float64","shape":[8]}},"selected":{"id":"1146","type":"Selection"},"selection_policy":{"id":"1163","type":"UnionRenderers"}},"id":"1145","type":"ColumnDataSource"},{"attributes":{},"id":"1130","type":"CategoricalTicker"},{"attributes":{"callback":null,"renderers":[{"id":"1151","type":"GlyphRenderer"}],"tags":["hv_created"],"tooltips":[["Feature","@{Feature}"],["Importance","@{Importance}"]]},"id":"1114","type":"HoverTool"},{"attributes":{},"id":"1137","type":"ResetTool"},{"attributes":{"axis_label":"Feature","bounds":"auto","formatter":{"id":"1155","type":"CategoricalTickFormatter"},"major_label_orientation":"horizontal","ticker":{"id":"1130","type":"CategoricalTicker"}},"id":"1129","type":"CategoricalAxis"}],"root_ids":["1115"]},"title":"Bokeh Application","version":"1.4.0"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1253').textContent;
+                  var render_items = [{"docid":"c5f0e380-dde4-49f9-9ebf-745c374440cc","roots":{"1115":"c22caf80-a582-416e-9751-e0f882478f45"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

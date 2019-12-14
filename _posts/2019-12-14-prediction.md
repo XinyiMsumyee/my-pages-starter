@@ -40,21 +40,21 @@ restaurants = osm2gpd.get(lng_min, lat_min, lng_max, lat_max, where="amenity=res
 
 By using spatial join `sjoin` and `groupby`, the number of the facilities in each taxi zone could be easily calculated and is diplayed in the figure below. 
 
-![distances-abandoned-cars]({{ site.url }}{{ site.baseurl }}/assets/images/osmData.png)
+![osm-data]({{ site.url }}{{ site.baseurl }}/assets/images/osmData.png)
 
 
 ### Census Tract Data
 
 Median income, number of people commuting by taxi and number of commuters are extracted from American Community Survey 5-Year Data.  
 
-![distances-abandoned-cars]({{ site.url }}{{ site.baseurl }}/assets/images/censusData.png)
+![census-tract-data]({{ site.url }}{{ site.baseurl }}/assets/images/censusData.png)
 
 
 ### Weather data
 
 Weather data is [ASOS-AWOS-METAR Data](https://mesonet.agron.iastate.edu/request/download.phtml). Daily mean temperature and mean precipitation data are included in the regression model to increase accuracy. 
 
-![distances-abandoned-cars]({{ site.url }}{{ site.baseurl }}/assets/images/weather.png)
+![weather-data]({{ site.url }}{{ site.baseurl }}/assets/images/weather.png)
 
 
 
@@ -62,7 +62,7 @@ Weather data is [ASOS-AWOS-METAR Data](https://mesonet.agron.iastate.edu/request
 
 `RandomForestRegressor` is used to build the regression model. Taxi trips made on Monday, Tuesday, Wednesday, Friday and Sunday in the 2nd week of 2015 are set as training data set, and trips made on Thurday and Saturday are set as test data set. The correltion between each two predictors is plotted. 
 
-![distances-abandoned-cars]({{ site.url }}{{ site.baseurl }}/assets/images/correlation.png)
+![correlation]({{ site.url }}{{ site.baseurl }}/assets/images/correlation.png)
 
 A simple grid search is run to optimize our hyperparameters. `n_estimators` is 200, and `max_depth` is 5 in the model. The test score of the prediction is 0.91, whereas the score is 0.40 when using linear regression model. The top important predictor is the count of stores in each taxi zone. 
 
@@ -70,15 +70,15 @@ A simple grid search is run to optimize our hyperparameters. `n_estimators` is 2
 
 For test set data, MAE is 1828.39. The mean value of the taci trips made on these two days is 6593.24. We map the absolute error and more should be done to make the model more generalizable.
 
-![distances-abandoned-cars]({{ site.url }}{{ site.baseurl }}/assets/images/aeMap.png)
+![ae-map]({{ site.url }}{{ site.baseurl }}/assets/images/aeMap.png)
 
 The model perform better for weekday demand prediction, which probably because lack of the training data for weekend.
 
-![distances-abandoned-cars]({{ site.url }}{{ site.baseurl }}/assets/images/real_vs_pred.png)
+![real-vs-pred]({{ site.url }}{{ site.baseurl }}/assets/images/real_vs_pred.png)
 
 We map the predicted and actual demand and our prediction model detect the general trend of demand across the space. To make our model more accurate, more predictors could be added into the model.
 
-![distances-abandoned-cars]({{ site.url }}{{ site.baseurl }}/assets/images/comparison.png)
+![comparison]({{ site.url }}{{ site.baseurl }}/assets/images/comparison.png)
 
 Based on the result, we can conclude that the model is generally good to predict the demand of taxi in NYC. Greater amount of data and more strongly related predictors would make the model better.
 

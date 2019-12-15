@@ -105,9 +105,9 @@ analytics:
 
 # Site Author
 author:
-  name: "TAnalyXI"
+  name: "MUSA620 final project"
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "Designed by Fan Shi, Xiaoran Wang and Xinyi Miao"
+  bio: "An user-friendly analysis system for taxi data designed by Fan Shi, Xiaoran Wang and Xinyi Miao."
   location: "For New York City"
   email:
   links:
@@ -125,7 +125,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"

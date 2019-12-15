@@ -4,8 +4,6 @@ date: 2019-12-14
 published: true
 tags: [dataviz, matplotlib, DBSCAN]
 excerpt: "This is the introduction of clustering analysis done in the project."
-hv-loader:
-  hv-chart-1: "charts/importance.html"
 toc: true
 toc_sticky: true
 ---

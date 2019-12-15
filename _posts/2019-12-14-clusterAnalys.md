@@ -22,7 +22,7 @@ Here, we conduct the analysis based on the trips happened on Jan 3rd, 2015. Ther
 
 ![table]({{ site.url }}{{ site.baseurl }}/assets/images/table_cluster5.png)
 
-![pickup]({{ site.url }}{{ site.baseurl }}/assets/images/clutser_pickup.png)
+![pickup]({{ site.url }}{{ site.baseurl }}/assets/images/cluster_pickup.png)
 
 ![dropoff]({{ site.url }}{{ site.baseurl }}/assets/images/cluster_dropoff.png)
 

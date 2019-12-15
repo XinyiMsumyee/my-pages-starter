@@ -2,7 +2,7 @@
 title: "Cluster analysis of taxi trips"
 date: 2019-12-14
 published: true
-tags: [dataviz, matplotlib, DBSCAN]
+tags: [dataviz, matplotlib, hvplot, DBSCAN]
 excerpt: "This is the introduction of clustering analysis done in the project."
 hv-loader:
   hv-chart-1: "charts/cluster_zone.html"

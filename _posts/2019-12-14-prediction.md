@@ -31,14 +31,7 @@ Taxi trips data is downloaded using `pandas.read_parquet`. Taxi zones data is pr
 
 ### Data from Open Street Map
 
-Location data of restaurants, stores, and subway stops could be easily downloaded by using `osm2gpd` package.
-
-```python
-#take restaurants data as an example.
-restaurants = osm2gpd.get(lng_min, lat_min, lng_max, lat_max, where="amenity=restaurant")
-```
-
-By using spatial join `sjoin` and `groupby`, the number of the facilities in each taxi zone could be easily calculated and is diplayed in the figure below. 
+Location data of restaurants, stores, and subway stops could be easily downloaded by using `osm2gpd` package. By using spatial join `sjoin` and `groupby`, the number of the facilities in each taxi zone could be easily calculated and is diplayed in the figure below. 
 
 ![osm-data]({{ site.url }}{{ site.baseurl }}/assets/images/osmData.png)
 

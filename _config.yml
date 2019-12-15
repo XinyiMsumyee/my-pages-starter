@@ -105,7 +105,7 @@ analytics:
 
 # Site Author
 author:
-  name: "Designed by Fan Shi, Xiaoran Wang and Xinyi Miao"
+  name: "Designed by Fan Shi, Xiaoran Wang\n and Xinyi Miao"
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "An user-friendly analysis system for taxi data."
   location: "For New York City"

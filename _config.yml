@@ -108,7 +108,7 @@ author:
   name: "Designed by Xinyi Miao, Xiaoran Wang and Fan Shi."
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "We are MUSA students at UPenn and this is the final project for MUSA620 in 2019 fall. TAnalyXi is an user-friendly analysis system for taxi data."
-  location: "For New York City"
+  location: "Designed for New York City"
   email:
   links:
     - label: "Email"

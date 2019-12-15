@@ -16,7 +16,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale: "en-US"
-title: "TAnalysXi"
+title: "Final Project for MUSA620"
 title_separator: "-"
 name: "An user-friendly analysis system for taxi data."
 description: "Final Project for MUSA620"
@@ -105,7 +105,7 @@ analytics:
 
 # Site Author
 author:
-  name: "MUSA620 final project"
+  name: "TAnalyXI"
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "An user-friendly analysis system for taxi data designed by Fan Shi, Xiaoran Wang and Xinyi Miao."
   location: "For New York City"

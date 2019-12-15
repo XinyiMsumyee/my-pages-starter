@@ -2,8 +2,8 @@
 title: "Cluster analysis of taxi trips"
 date: 2019-12-14
 published: true
-tags: [dataviz, hvplot, seaborn, matplotlib, randomForest]
-excerpt: "This is the introduction of the prediction model."
+tags: [dataviz, matplotlib, DBSCAN]
+excerpt: "This is the introduction of clustering analysis done in the project."
 hv-loader:
   hv-chart-1: "charts/importance.html"
 toc: true
@@ -20,7 +20,7 @@ DBSCAN is used here to cluster the taxi trips data based on the patterns, includ
 
 Here, we conduct the analysis based on the trips happened on Jan 3rd, 2015. There are in total 377103 trips were made on that day. After the clustering, the data are divided into 23 clusters. Top five biggest clusters are extracted and visualized. Combined with the maps and the mean pick-up hour as well as the mean trip distance, we can infer the reasons for travel.
 
-![table]({{ site.url }}{{ site.baseurl }}/assets/images/table.png)
+![table]({{ site.url }}{{ site.baseurl }}/assets/images/table_cluster5.png)
 
 ![pickup]({{ site.url }}{{ site.baseurl }}/assets/images/clutser_pickup.png)
 

@@ -1,6 +1,6 @@
 ---
 title: "Route planning tool built on dash + foilum"
-date: 2019-12-14
+date: 2019-12-16
 published: true
 tags: [dataviz, dash, folium]
 excerpt: "This is the introduction of route planning tool."
@@ -24,6 +24,6 @@ This app enables user whose origin is times square to select their destination f
 
 Here are two example:
 
-![table]({{ site.url }}{{ site.baseurl }}/assets/images/routePlanning1.png)
+![table]({{ site.url }}{{ site.baseurl }}/assets/images/routeplanning1.png)
 
-![table]({{ site.url }}{{ site.baseurl }}/assets/images/routePlanning2.png)
+![table]({{ site.url }}{{ site.baseurl }}/assets/images/routeplanning2.png)

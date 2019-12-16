@@ -24,6 +24,7 @@ This app enables user whose origin is times square to select their destination f
 
 Here are two example:
 
-![table]({{ site.url }}{{ site.baseurl }}/assets/images/routeplanning1.png)
+![image1]({{ site.url }}{{ site.baseurl }}/assets/images/routeplanning1.png)
 
-![table]({{ site.url }}{{ site.baseurl }}/assets/images/routeplanning2.png)
+
+![image2]({{ site.url }}{{ site.baseurl }}/assets/images/routeplanning2.png)
